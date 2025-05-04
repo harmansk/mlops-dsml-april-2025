@@ -74,3 +74,8 @@ else:
             """
         )
         st.line_chart(ticker_df.Volume)
+
+# We can also then deploy it using streamlit cloud or any other cloud service.
+# To deploy it using streamlit cloud, we need to create a requirements.txt file using : pip freeze > requirements.txt 
+# and then push the code to a git repository. Then we can connect the git repository to streamlit cloud and deploy it.
+
