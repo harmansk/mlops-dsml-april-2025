@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import joblib
 
+# Creating this app using Streamlit where using model stroes in cars24.ipynb to predict the price of a car based on user inputs.
 st.title("Car Price Prediction App")
 
 
@@ -34,14 +35,14 @@ transmission_type = st.selectbox("Transmission Type", ["Manual", "Automatic"])
 
 seats = st.number_input("Seats", min_value=2, max_value=10, value=5, step=1)
 
+# Load the scaler object to transform the testd data (coming from user input)
 scaler = joblib.load('scaler.pkl')
 
 def model_pred(
     year, seller_type, km_driven, fuel_type, 
-    transmission_type, mileage, engine, max_power, seats
-):
+    transmission_type, mileage, engine, max_power, seats):
 	
-		# Convert categorical features using the encode dictionary
+	# Convert categorical features using the encode dictionary
 	seller_type_enc = encode_dict["seller_type"][seller_type]
 	fuel_type_enc = encode_dict["fuel_type"][fuel_type]
 	transmission_type_enc = encode_dict["transmission_type"][transmission_type]
