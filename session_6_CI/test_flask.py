@@ -1,8 +1,8 @@
 import pytest
-
+# importing panckages as that is the name of Falsk app in hello.py
 from hello import pancakes
 
-
+# There is special function in pytest called fixture, which is used to create a test client for the Flask app.
 @pytest.fixture
 def client():
 	return pancakes.test_client()
